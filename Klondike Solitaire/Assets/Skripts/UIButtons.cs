@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
@@ -18,18 +19,20 @@ public class UIButtons : MonoBehaviour
     int i = 0;
     public void ResetScene()
     {
-        // find all the cards and remove them
-        UpdateSprite[] cards = FindObjectsOfType<UpdateSprite>();
-        print((i++).ToString());
-        foreach (UpdateSprite card in cards)
-        {
-            Destroy(card.gameObject);
-        }
-        ClearTopValues();
-        print((i++).ToString());
-        // deal new cards
-        FindObjectOfType<Solitaire>().PlayCards();
-        print((i++).ToString());
+
+        SceneManager.LoadScene(1);
+        //// find all the cards and remove them
+        //UpdateSprite[] cards = FindObjectsOfType<UpdateSprite>();
+        //print((i++).ToString());
+        //foreach (UpdateSprite card in cards)
+        //{
+        //    Destroy(card.gameObject);
+        //}
+        //ClearTopValues();
+        //print((i++).ToString());
+        //// deal new cards
+        //FindObjectOfType<Solitaire>().PlayCards();
+        //print((i++).ToString());
     }
 
     void ClearTopValues()

@@ -40,6 +40,7 @@ public class Solitaire : MonoBehaviour
     public int trips;
     public int tripsRemainder;
 
+    public List<Sprite> cardbacks;
 
 
     // Start is called before the first frame update
