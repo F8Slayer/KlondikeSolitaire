@@ -725,10 +725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e4694a686d0394d9e9783851fc4bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentImageNumber: 0
-  ImageNames:
-  - back
-  - cardBack_blue2
+  CardShirtNumber: 0
+  shirtManager: {fileID: 11400000, guid: 5a1fc3e56c9fff446af20e890115f1e7, type: 2}
 --- !u!114 &429558792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1304,7 +1302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &896827739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2074,7 +2072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1548706105
 RectTransform:
   m_ObjectHideFlags: 0

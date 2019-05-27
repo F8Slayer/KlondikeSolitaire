@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15dc40d87f7d2241a0ff09349df7dbb, type: 3}
+  m_Name: CardShirtManager
+  m_EditorClassIdentifier: 
+  Shirts:
+  - {fileID: 21300000, guid: 0b042a0a418d9d743901c989948fe60b, type: 3}
+  - {fileID: 21300000, guid: 3776f337ab26cc84bbdbbe6ec7a23bbe, type: 3}
+  - {fileID: 21300000, guid: ea05f8c8e2e85af46bd35432e01683f0, type: 3}

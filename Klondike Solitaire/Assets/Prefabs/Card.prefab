@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21900d9aa7de8904b9c13787e6cfc53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shirtManager: {fileID: 11400000, guid: 5a1fc3e56c9fff446af20e890115f1e7, type: 2}
   cardFace: {fileID: 0}
   cardBack: {fileID: 21300000, guid: 479a513443b4f1044a1f098cf1438c9a, type: 3}
 --- !u!50 &114

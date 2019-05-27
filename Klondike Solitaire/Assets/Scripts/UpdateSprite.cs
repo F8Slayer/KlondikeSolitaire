@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpdateSprite : MonoBehaviour
 {
-
+    public CardShirtManager shirtManager = null;
     public Sprite cardFace;
     public Sprite cardBack;
     private SpriteRenderer spriteRenderer;
@@ -12,10 +12,17 @@ public class UpdateSprite : MonoBehaviour
     private Solitaire solitaire;
     private UserInput userInput;
     
-
-    // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("CardShirtNumber"))
+        {
+            cardBack = shirtManager.GetShirtById(PlayerPrefs.GetInt("CardShirtNumber"));
+        }
+        else
+        {
+            cardBack = shirtManager.GetShirtById(0);
+        }
+
         List<string> deck = Solitaire.GenerateDeck();
         solitaire = FindObjectOfType<Solitaire>();
         userInput = FindObjectOfType<UserInput>();
@@ -34,7 +41,6 @@ public class UpdateSprite : MonoBehaviour
         selectable = GetComponent<Selectable>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (selectable.faceUp == true)

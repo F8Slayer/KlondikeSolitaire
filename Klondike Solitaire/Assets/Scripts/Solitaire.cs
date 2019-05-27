@@ -1,16 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
-
 
 public class Solitaire : MonoBehaviour
 {
-    
-    //private Togglevalue togglevalue;
-    
-
     public static Toggle toggle_1;
     public static Toggle toggle_3;
     public Sprite[] cardFaces;
@@ -25,6 +20,7 @@ public class Solitaire : MonoBehaviour
     public static string[] values = new string[] { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
     public List<string>[] bottoms;
     public List<string>[] tops;
+    public CardShirtManager shirtManager = null;
 
     private List<string> bottom0 = new List<string>();
     private List<string> bottom1 = new List<string>();
@@ -42,19 +38,20 @@ public class Solitaire : MonoBehaviour
 
     public List<Sprite> cardbacks;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        bottoms = new List<string>[] { bottom0, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6 };
-       
-        PlayCards();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (PlayerPrefs.HasKey("CardShirtNumber"))
+        {
+            deckButton.GetComponent<SpriteRenderer>().sprite = shirtManager.GetShirtById(PlayerPrefs.GetInt("CardShirtNumber"));
+        }
+        else
+        {
+            deckButton.GetComponent<SpriteRenderer>().sprite = shirtManager.GetShirtById(0);
+        }
         
+        bottoms = new List<string>[] { bottom0, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6 };
+
+        PlayCards();
     }
 
     public void PlayCards()
@@ -73,7 +70,7 @@ public class Solitaire : MonoBehaviour
         SolitaireSort();
         StartCoroutine(SolitaireDeal());
         SortDeckIntoTrips();
-    } 
+    }
 
     public static List<string> GenerateDeck()
     {
@@ -123,14 +120,14 @@ public class Solitaire : MonoBehaviour
                 {
                     newCard.GetComponent<Selectable>().faceUp = false;
                 }
-                    
+
                 yOffset = yOffset + 4f;
                 zOffset = zOffset + 1f;
                 discardPile.Add(card);
             }
         }
 
-        foreach(string card in discardPile)
+        foreach (string card in discardPile)
         {
             if (deck.Contains(card))
             {
@@ -142,7 +139,7 @@ public class Solitaire : MonoBehaviour
 
     void SolitaireSort()
     {
-        for (int i=0; i < 7; i++)
+        for (int i = 0; i < 7; i++)
         {
             for (int j = i; j < 7; j++)
             {
@@ -154,7 +151,7 @@ public class Solitaire : MonoBehaviour
 
     public void SortDeckIntoTrips()
     {
-        
+
         if (Data.val == 1)
         {
             trips = deck.Count / 3;

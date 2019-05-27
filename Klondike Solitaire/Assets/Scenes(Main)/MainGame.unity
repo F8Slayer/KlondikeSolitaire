@@ -2874,10 +2874,12 @@ MonoBehaviour:
   - {fileID: 1356494156}
   - {fileID: 1407348310}
   tripsOnDisplay: []
+  shirtManager: {fileID: 11400000, guid: 5a1fc3e56c9fff446af20e890115f1e7, type: 2}
   deck: []
   discardPile: []
   trips: 0
   tripsRemainder: 0
+  cardbacks: []
 --- !u!114 &1742041543
 MonoBehaviour:
   m_ObjectHideFlags: 0
