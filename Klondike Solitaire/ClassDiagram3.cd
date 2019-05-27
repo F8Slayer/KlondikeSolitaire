@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Exmp" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Exmp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActiveStateToggler" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\ActiveStateToggler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationManager" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\ApplicationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChangeColor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAAAAAgAAAAAAAAAAAAAAAAAAAAEAAAAAAAAACCA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\ChangeColor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DragMe" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAAAAAAgAAAAABAEAAgAAAAACAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\DragMe.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DragPanel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAMAAAAAABAAAAAAAAAAAIAAAAAAAAAAEI=</HashCode>
+      <FileName>Assets\Game UI\Scripts\DragPanel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DropMe" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAgAAAAAAAAAAAAQAAAAAgAAEAAAAQAQAACAA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\DropMe.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PanelManager" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AogAAAAIAAAAQAAAAAIAAAAAAAAAAABAAKQAAAAACAA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\PanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResizePanel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAgAAIAAAAAABAAAAAAAACAAAAAAACAAAAAEI=</HashCode>
+      <FileName>Assets\Game UI\Scripts\ResizePanel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ScrollDetailTexture" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAAAAQKAAAAAAAAAAAAgIAAAAAAAIiAA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\ScrollDetailTexture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShowSliderValue" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\ShowSliderValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiltWindow" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIADAAAAAAAAAAAAAAAAAAAAAAAAACAAAAACA=</HashCode>
+      <FileName>Assets\Game UI\Scripts\TiltWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExitClick">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Menu Scripts\ExitClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAIAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Menu Scripts\LoadSceneOnClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadSceneOnClick">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Menu Scripts\LoadSceneOnClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreKeeper">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAEAAAAAAAAAAAAAAAAACAAAAQAA=</HashCode>
+      <FileName>Assets\Skripts\ScoreKeeper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selectable">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEQAAAEAACAAAAAAAAAAAAgCAIAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Skripts\Selectable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Solitaire">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAEPcIciBAgAQAAAAACEAAAAARAGCABAACEIgAEAA=</HashCode>
+      <FileName>Assets\Skripts\Solitaire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Togglevalue">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACBAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Skripts\Togglevalue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIButtons">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Skripts\UIButtons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UpdateSprite">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAACAQAAAAQAAAAAAQAAQQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Skripts\UpdateSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserInput">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARABAAEACAAAAIBAIBQAAAEgAAIAAQAAABAAGAAAAA=</HashCode>
+      <FileName>Assets\Skripts\UserInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
