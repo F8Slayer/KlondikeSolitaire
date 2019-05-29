@@ -40,15 +40,8 @@ public class Solitaire : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("CardShirtNumber"))
-        {
-            deckButton.GetComponent<SpriteRenderer>().sprite = shirtManager.GetShirtById(PlayerPrefs.GetInt("CardShirtNumber"));
-        }
-        else
-        {
-            deckButton.GetComponent<SpriteRenderer>().sprite = shirtManager.GetShirtById(0);
-        }
-        
+        deckButton.GetComponent<SpriteRenderer>().sprite = shirtManager.GetShirtById(PlayerPrefs.HasKey("CardShirtNumber") ? PlayerPrefs.GetInt("CardShirtNumber") : 0);
+
         bottoms = new List<string>[] { bottom0, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6 };
 
         PlayCards();

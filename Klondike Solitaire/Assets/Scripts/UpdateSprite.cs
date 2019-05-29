@@ -11,17 +11,10 @@ public class UpdateSprite : MonoBehaviour
     private Selectable selectable;
     private Solitaire solitaire;
     private UserInput userInput;
-    
+
     void Start()
     {
-        if (PlayerPrefs.HasKey("CardShirtNumber"))
-        {
-            cardBack = shirtManager.GetShirtById(PlayerPrefs.GetInt("CardShirtNumber"));
-        }
-        else
-        {
-            cardBack = shirtManager.GetShirtById(0);
-        }
+        cardBack = shirtManager.GetShirtById(PlayerPrefs.HasKey("CardShirtNumber") ? PlayerPrefs.GetInt("CardShirtNumber") : 0);
 
         List<string> deck = Solitaire.GenerateDeck();
         solitaire = FindObjectOfType<Solitaire>();
@@ -30,7 +23,7 @@ public class UpdateSprite : MonoBehaviour
         int i = 0;
         foreach (string card in deck)
         {
-            if (this.name == card)
+            if (name == card)
             {
                 cardFace = solitaire.cardFaces[i];
                 break;
@@ -43,14 +36,7 @@ public class UpdateSprite : MonoBehaviour
 
     void Update()
     {
-        if (selectable.faceUp == true)
-        {
-            spriteRenderer.sprite = cardFace;
-        }
-        if (selectable.faceUp == false)
-        {
-            spriteRenderer.sprite = cardBack;
-        }
+        spriteRenderer.sprite = selectable.faceUp ? cardFace : cardBack;
 
         if (userInput.slot1)
         {

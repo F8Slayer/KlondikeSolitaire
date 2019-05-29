@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Selectable : MonoBehaviour
 {
@@ -13,14 +11,13 @@ public class Selectable : MonoBehaviour
 
     private string valueString;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (CompareTag("Card"))
         {
             suit = transform.name[0].ToString();
 
-            for (int i=1; i< transform.name.Length; i++)
+            for (int i = 1; i < transform.name.Length; i++)
             {
                 char c = transform.name[i];
                 valueString = valueString + c.ToString();
@@ -78,13 +75,6 @@ public class Selectable : MonoBehaviour
             {
                 value = 13;
             }
-
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

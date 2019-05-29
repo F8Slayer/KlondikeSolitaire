@@ -8,14 +8,7 @@ public class ChangeSprite : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("CardShirtNumber"))
-        {
-            CardShirtNumber = PlayerPrefs.GetInt("CardShirtNumber");
-        }
-        else
-        {
-            CardShirtNumber = 0;
-        }
+        CardShirtNumber = PlayerPrefs.HasKey("CardShirtNumber") ? PlayerPrefs.GetInt("CardShirtNumber") : 0;
         ShowImage();
     }
 

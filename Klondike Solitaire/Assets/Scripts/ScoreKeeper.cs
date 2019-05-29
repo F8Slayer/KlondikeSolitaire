@@ -1,28 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreKeeper : MonoBehaviour
 {
+    public float Score = 10000;
+    public float ScoreDecrease = 10;
+    public float timeInterval = 5;
+
+    private float currentTimeinterval = 0;
+
     public Selectable[] topStacks;
     public GameObject highScorePanel;
+    public Text scoreTextField;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (HasWon())
+        if (currentTimeinterval <= 0)
         {
-            Win();
+            Score -= ScoreDecrease;
+            Debug.Log(Score);
+            currentTimeinterval = timeInterval;
         }
+        else
+        {
+            currentTimeinterval -= Time.deltaTime;
+        }
+        CheckWon();
     }
 
-    public bool HasWon()
+    public void CheckWon()
     {
         int i = 0;
         foreach (Selectable topstack in topStacks)
@@ -31,18 +37,14 @@ public class ScoreKeeper : MonoBehaviour
         }
         if (i >= 52)
         {
-            return true;
-        }
-        else
-        {
-            return false;
+            Win();
         }
     }
 
-    void Win()
+    public void Win()
     {
         highScorePanel.SetActive(true);
+        scoreTextField.text = $"Your Score: {(Score > 0 ? (int)Score : 0)}";
         print("You have won!");
     }
-
 }

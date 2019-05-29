@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Linq;
 
 public class UserInput : MonoBehaviour
@@ -11,14 +9,12 @@ public class UserInput : MonoBehaviour
     private float doubleClickTime = 0.3f;
     private int clickCount = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         solitaire = FindObjectOfType<Solitaire>();
-        slot1 = this.gameObject;
+        slot1 = gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (clickCount == 1)
@@ -60,12 +56,12 @@ public class UserInput : MonoBehaviour
                     //clicked card
                     Card(hit.collider.gameObject);
                 }
-                 else if (hit.collider.CompareTag("Top"))
+                else if (hit.collider.CompareTag("Top"))
                 {
                     //clicked top
                     Top(hit.collider.gameObject);
                 }
-                 else if (hit.collider.CompareTag("Bottom"))
+                else if (hit.collider.CompareTag("Bottom"))
                 {
                     //clicked bottom
                     Bottom(hit.collider.gameObject);
@@ -84,89 +80,80 @@ public class UserInput : MonoBehaviour
 
     void Card(GameObject selected)
     {
-        
-            // card click actions
-            print("Clicked on card");
+        // card click actions
+        print("Clicked on card");
 
         //if (!Blocked(selected))
         //{
-            if (!selected.GetComponent<Selectable>().faceUp) // if the card clicked on is facedown
+        if (!selected.GetComponent<Selectable>().faceUp) // if the card clicked on is facedown
+        {
+            if (!Blocked(selected)) // if the card clicked on is not blocked
             {
-                if (!Blocked(selected)) // if the card clicked on is not blocked
-                {
-                    // flip it over
-                    selected.GetComponent<Selectable>().faceUp = true;
-                    slot1 = this.gameObject;
-                }
+                // flip it over
+                selected.GetComponent<Selectable>().faceUp = true;
+                slot1 = this.gameObject;
             }
-
-            else if (selected.GetComponent<Selectable>().inDeckPile) // if the card clicked on is in the deck pile with the trips
+        }
+        else if (selected.GetComponent<Selectable>().inDeckPile) // if the card clicked on is in the deck pile with the trips
+        {
+            // if it is not blocked
+            if (!Blocked(selected))
             {
-                // if it is not blocked
-                if (!Blocked(selected))
+                if (slot1 == selected) //if the same card is clicked twice
                 {
-                    if (slot1 == selected) //if the same card is clicked twice
+                    if (DoubleClick())
                     {
-                        if (DoubleClick())
-                        {
-                            // attempt auto stack
-                            AutoStack(selected);
-                        }
+                        // attempt auto stack
+                        AutoStack(selected);
                     }
-                    else
-                    {
-                        slot1 = selected;
-                    }
-
-
-
-
-                }
-            }
-        //}
-
-
-            // select it
-
-            // if the card is face up
-            // if there is no card currently selected
-            // select the card
-
-            if (slot1 == this.gameObject) // not null beacuse we pass in this gameObject instead
-            {
-                slot1 = selected;
-            }
-
-            // if the card is already a card selected (and it is not the same card)
-
-            else if (slot1 != selected)
-            {
-                // if the new card is eligable to stack on the old card
-                if (Stackable(selected))
-                {
-                    Stack(selected);
                 }
                 else
                 {
-                    // select the new card
                     slot1 = selected;
                 }
-
-
             }
+        }
+        //}
 
-            // else if there is already a card selected and it is the same card
-            // if the time is short enough then it is a double click
-            // if the card is eligible to fly up top then do it
 
-            else if (slot1 == selected)
+        // select it
+
+        // if the card is face up
+        // if there is no card currently selected
+        // select the card
+
+        if (slot1 == this.gameObject) // not null beacuse we pass in this gameObject instead
+        {
+            slot1 = selected;
+        }
+
+        // if the card is already a card selected (and it is not the same card)
+
+        else if (slot1 != selected)
+        {
+            // if the new card is eligable to stack on the old card
+            if (Stackable(selected))
             {
-                if (DoubleClick())
-                {
-                    AutoStack(selected);
-                }
+                Stack(selected);
             }
-        
+            else
+            {
+                // select the new card
+                slot1 = selected;
+            }
+        }
+
+        // else if there is already a card selected and it is the same card
+        // if the time is short enough then it is a double click
+        // if the card is eligible to fly up top then do it
+
+        else if (slot1 == selected)
+        {
+            if (DoubleClick())
+            {
+                AutoStack(selected);
+            }
+        }
     }
 
     void Top(GameObject selected)
@@ -206,7 +193,6 @@ public class UserInput : MonoBehaviour
 
         if (!s2.inDeckPile)
         {
-
             if (s2.top) // if in the topppile must stuck suited Ace to King
             {
                 if (s1.suit == s2.suit || (s1.value == 1 && s2.suit == null))
@@ -224,40 +210,37 @@ public class UserInput : MonoBehaviour
             // if in the bottom pile must stack alternate colours King to Ace
             else
             {
-               
-                    if (s1.value == s2.value - 1)
+                if (s1.value == s2.value - 1)
+                {
+                    bool card1Red = true;
+                    bool card2Red = true;
+
+                    if (s1.suit == "C" || s1.suit == "S")
                     {
-                        bool card1Red = true;
-                        bool card2Red = true;
-
-                        if (s1.suit == "C" || s1.suit == "S")
-                        {
-                            card1Red = false;
-                        }
-
-                        if (s2.suit == "C" || s2.suit == "S")
-                        {
-                            card2Red = false;
-                        }
-
-                        if (card1Red == card2Red)
-                        {
-                            print("Not stackable");
-                            return false;
-                        }
-                        else
-                        {
-                            print("Stackable");
-                            return true;
-                        }
-
+                        card1Red = false;
                     }
-                
+
+                    if (s2.suit == "C" || s2.suit == "S")
+                    {
+                        card2Red = false;
+                    }
+
+                    if (card1Red == card2Red)
+                    {
+                        print("Not stackable");
+                        return false;
+                    }
+                    else
+                    {
+                        print("Stackable");
+                        return true;
+                    }
+                }
             }
         }
         return false;
     }
-    
+
     void Stack(GameObject selected)
     {
         // if on top of king or emty bottom stack the cards in place
@@ -286,7 +269,7 @@ public class UserInput : MonoBehaviour
         }
         else if (s1.top)
         {
-            solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value -1;
+            solitaire.topPos[s1.row].GetComponent<Selectable>().value = s1.value - 1;
         }
         else
         {
@@ -316,7 +299,7 @@ public class UserInput : MonoBehaviour
         Selectable s2 = selected.GetComponent<Selectable>();
         if (s2.inDeckPile == true)
         {
-            if(s2.name == solitaire.tripsOnDisplay.Last())
+            if (s2.name == solitaire.tripsOnDisplay.Last())
             {
                 return false;
             }
@@ -328,17 +311,9 @@ public class UserInput : MonoBehaviour
         }
         else
         {
-            if (s2.name == solitaire.bottoms[s2.row].Last()) // check if it is the bottom card
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            // check if it is the bottom card
+            return s2.name != solitaire.bottoms[s2.row].Last();
         }
-
-      
     }
 
     bool DoubleClick()
@@ -375,7 +350,6 @@ public class UserInput : MonoBehaviour
                     // if it is the last card (if it has no children
                     if (HasNoChildren(slot1))
                     {
-
                         slot1 = selected;
                         // find a top spot the matches the conditions for auto stacking if it exists
                         string lastCardname = stack.suit + stack.value.ToString();
@@ -401,7 +375,6 @@ public class UserInput : MonoBehaviour
                     }
                 }
             }
-
         }
     }
 
@@ -412,14 +385,6 @@ public class UserInput : MonoBehaviour
         {
             i++;
         }
-        if (i == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return i == 0;
     }
-
 }
