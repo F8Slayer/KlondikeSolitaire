@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CardShirtManager
   m_EditorClassIdentifier: 
   Shirts:
-  - {fileID: 21300000, guid: 0b042a0a418d9d743901c989948fe60b, type: 3}
-  - {fileID: 21300000, guid: 3776f337ab26cc84bbdbbe6ec7a23bbe, type: 3}
-  - {fileID: 21300000, guid: ea05f8c8e2e85af46bd35432e01683f0, type: 3}
+  - {fileID: 21300000, guid: 479a513443b4f1044a1f098cf1438c9a, type: 3}
+  - {fileID: 21300000, guid: f65f5f5c8e66db14e9d2b0118ad7c6eb, type: 3}
+  - {fileID: 21300000, guid: 376d059a2c3df364cbea6d06dd221bcd, type: 3}

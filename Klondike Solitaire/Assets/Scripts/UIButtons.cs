@@ -5,18 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
+    public GameObject highScorePanel;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+    public void PlayAgain()
+    {
+        highScorePanel.SetActive(false);
+        ResetScene();
+    }
+
     int i = 0;
+
+
     public void ResetScene()
     {
 

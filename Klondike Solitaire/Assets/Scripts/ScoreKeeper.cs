@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScoreKeeper : MonoBehaviour
 {
     public Selectable[] topStacks;
+    public GameObject highScorePanel;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,10 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (HasWon())
+        {
+            Win();
+        }
     }
 
     public bool HasWon()
@@ -37,6 +41,7 @@ public class ScoreKeeper : MonoBehaviour
 
     void Win()
     {
+        highScorePanel.SetActive(true);
         print("You have won!");
     }
 
