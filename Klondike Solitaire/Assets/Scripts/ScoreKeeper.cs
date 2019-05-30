@@ -18,7 +18,6 @@ public class ScoreKeeper : MonoBehaviour
         if (currentTimeinterval <= 0)
         {
             Score -= ScoreDecrease;
-            Debug.Log(Score);
             currentTimeinterval = timeInterval;
         }
         else
